@@ -14,6 +14,7 @@ with app.app_context():
     Research.query.delete()
     Author.query.delete()
     ResearchAuthors.query.delete()
+    
 
     print("Creating Research...")
     r1 = Research(topic = "AI In Day To Day Life", year = 1994, page_count = 10)
@@ -42,4 +43,5 @@ with app.app_context():
     db.session.add_all(researchAuthor)
     db.session.commit()
 
+    print(Research.query.all())
     print("Seeding done!")
